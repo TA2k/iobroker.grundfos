@@ -1,120 +1,120 @@
 {
-    "common": {
-        "name": "grundfos",
-        "version": "0.0.1",
-        "news": {
-            "0.0.1": {
-                "en": "initial release",
-                "de": "Erstveröffentlichung",
-                "ru": "Начальная версия",
-                "pt": "lançamento inicial",
-                "nl": "Eerste uitgave",
-                "fr": "Première version",
-                "it": "Versione iniziale",
-                "es": "Versión inicial",
-                "pl": "Pierwsze wydanie",
-                "uk": "Початкова версія",
-                "zh-cn": "首次出版"
-            }
-        },
-        "titleLang": {
-            "en": "Grundfos",
-            "de": "Grundfos",
-            "ru": "Грундфос",
-            "pt": "Grundfos",
-            "nl": "Grundfos",
-            "fr": "Grundfos",
-            "it": "Grundfos",
-            "es": "Grundfos",
-            "pl": "Grundfos",
-            "uk": "Grundfos",
-            "zh-cn": "格兰富"
-        },
-        "desc": {
-            "en": "Adapter for Grundfos Alpha devices",
-            "de": "Adapter für Grundfos Alpha-Geräte",
-            "ru": "Адаптер для устройств Grundfos Alpha",
-            "pt": "Adaptador para dispositivos Grundfos Alpha",
-            "nl": "Adapter voor Grundfos Alpha-apparaten",
-            "fr": "Adaptateur pour appareils Grundfos Alpha",
-            "it": "Adattatore per dispositivi Grundfos Alpha",
-            "es": "Adaptador para dispositivos Grundfos Alpha",
-            "pl": "Adapter do urządzeń Grundfos Alpha",
-            "uk": "Адаптер для приладів Grundfos Alpha",
-            "zh-cn": "适用于格兰富 Alpha 设备的适配器"
-        },
-        "authors": [
-            "TA2k <tombox2020@gmail.com>"
-        ],
-        "keywords": [
-            "grundfos",
-            "alpha"
-        ],
-        "licenseInformation": {
-            "type": "free",
-            "license": "MIT"
-        },
-        "platform": "Javascript/Node.js",
-        "icon": "grundfos.png",
-        "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/TA2k/ioBroker.grundfos/main/admin/grundfos.png",
-        "readme": "https://github.com/TA2k/ioBroker.grundfos/blob/main/README.md",
-        "loglevel": "info",
-        "tier": 3,
-        "mode": "daemon",
-        "type": "metering",
-        "compact": true,
-        "connectionType": "local",
-        "dataSource": "poll",
-        "adminUI": {
-            "config": "json"
-        },
-        "dependencies": [
-            {
-                "js-controller": ">=6.0.11"
-            }
-        ],
-        "globalDependencies": [
-            {
-                "admin": ">=7.0.23"
-            }
-        ],
-        "osDependencies": {
-            "linux": [
-                "bluetooth",
-                "bluez",
-                "libbluetooth-dev",
-                "libudev-dev",
-                "libcap2-bin"
-            ]
-        }
+  "common": {
+    "name": "grundfos",
+    "version": "0.0.1",
+    "news": {
+      "0.0.1": {
+        "en": "initial release",
+        "de": "Erstveröffentlichung",
+        "ru": "Начальная версия",
+        "pt": "lançamento inicial",
+        "nl": "Eerste uitgave",
+        "fr": "Première version",
+        "it": "Versione iniziale",
+        "es": "Versión inicial",
+        "pl": "Pierwsze wydanie",
+        "uk": "Початкова версія",
+        "zh-cn": "首次出版"
+      }
     },
-    "native": {
-        "hciDevice": 0,
-        "devices": []
+    "titleLang": {
+      "en": "Grundfos",
+      "de": "Grundfos",
+      "ru": "Грундфос",
+      "pt": "Grundfos",
+      "nl": "Grundfos",
+      "fr": "Grundfos",
+      "it": "Grundfos",
+      "es": "Grundfos",
+      "pl": "Grundfos",
+      "uk": "Grundfos",
+      "zh-cn": "格兰富"
     },
-    "objects": [],
-    "instanceObjects": [
-        {
-            "_id": "info",
-            "type": "channel",
-            "common": {
-                "name": "Information"
-            },
-            "native": {}
-        },
-        {
-            "_id": "info.connection",
-            "type": "state",
-            "common": {
-                "role": "indicator.connected",
-                "name": "Device or service connected",
-                "type": "boolean",
-                "read": true,
-                "write": false,
-                "def": false
-            },
-            "native": {}
-        }
-    ]
+    "desc": {
+      "en": "Adapter for Grundfos Alpha devices",
+      "de": "Adapter für Grundfos Alpha-Geräte",
+      "ru": "Адаптер для устройств Grundfos Alpha",
+      "pt": "Adaptador para dispositivos Grundfos Alpha",
+      "nl": "Adapter voor Grundfos Alpha-apparaten",
+      "fr": "Adaptateur pour appareils Grundfos Alpha",
+      "it": "Adattatore per dispositivi Grundfos Alpha",
+      "es": "Adaptador para dispositivos Grundfos Alpha",
+      "pl": "Adapter do urządzeń Grundfos Alpha",
+      "uk": "Адаптер для приладів Grundfos Alpha",
+      "zh-cn": "适用于格兰富 Alpha 设备的适配器"
+    },
+    "authors": [
+      "TA2k <tombox2020@gmail.com>"
+    ],
+    "keywords": [
+      "grundfos",
+      "alpha"
+    ],
+    "licenseInformation": {
+      "type": "free",
+      "license": "MIT"
+    },
+    "platform": "Javascript/Node.js",
+    "icon": "grundfos.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/TA2k/ioBroker.grundfos/main/admin/grundfos.png",
+    "readme": "https://github.com/TA2k/ioBroker.grundfos/blob/main/README.md",
+    "loglevel": "info",
+    "tier": 3,
+    "mode": "daemon",
+    "type": "metering",
+    "compact": true,
+    "connectionType": "local",
+    "dataSource": "poll",
+    "adminUI": {
+      "config": "json"
+    },
+    "dependencies": [
+      {
+        "js-controller": ">=6.0.11"
+      }
+    ],
+    "globalDependencies": [
+      {
+        "admin": ">=7.8.23"
+      }
+    ],
+    "osDependencies": {
+      "linux": [
+        "bluetooth",
+        "bluez",
+        "libbluetooth-dev",
+        "libudev-dev",
+        "libcap2-bin"
+      ]
+    }
+  },
+  "native": {
+    "hciDevice": 0,
+    "devices": []
+  },
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "info",
+      "type": "channel",
+      "common": {
+        "name": "Information"
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "role": "indicator.connected",
+        "name": "Device or service connected",
+        "type": "boolean",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    }
+  ]
 }
