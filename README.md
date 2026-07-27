@@ -59,19 +59,15 @@ your setup:
    temperature, mode). Activate the reader mode on the pump by long-pressing the right
    button. Most robust option.
 2. **Direct BLE (GENI)** — connects to the pump's GENI service and polls telemetry, and
-   for the HWR family also controls mode/setpoint/start-stop. ALPHA2 GO / ALPHA3 expect
-   an **encrypted BLE link**; that may require pairing the pump at the OS/BlueZ level
-   first, which `noble` cannot always initiate on its own. If this path is unreliable on
-   your hardware, use the ESPHome path instead.
+   for the HWR family also controls mode/setpoint/start-stop. ALPHA2 GO / ALPHA3 use an
+   **encrypted BLE link**; the bundled `@stoprocent/noble` performs the pairing (Just
+   Works) automatically the first time the pump requests security, so no manual bonding
+   is normally needed.
 
-   Pairing: after the adapter starts and tries to connect, press the blue LED button on
-   the pump to start pairing. Once the LED stops blinking and stays lit, the connection
-   is established. If reconnects fail afterwards, bond the pump manually at the OS level
-   (Linux):
-
-   ```bash
-   bluetoothctl pair XX:XX:XX:XX:XX:XX
-   ```
+   To connect the first time, press the blue LED button on the pump. Once its LED stops
+   blinking and stays lit, the pump is reachable and the first secured read triggers
+   pairing (this can take a few seconds). If a host still refuses to pair (rare, usually
+   an OS/BlueZ quirk), the ESPHome path avoids BLE pairing entirely.
 3. **ESP32 (ESPHome API)** — an ESP32 running the ESPHome `alpha3` / `alpha_hwr`
    component does the BLE work and exposes the pump as ESPHome entities; the adapter
    connects to its native API. Set host, port (default 6053), and password or encryption

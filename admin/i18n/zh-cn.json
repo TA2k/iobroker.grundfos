@@ -12,6 +12,7 @@
     "Poll (ms)": "轮询（毫秒）",
     "Transport": "运输",
     "Transport: advertising = plug-on AlphaReader MI401 (passive, read-only); gatt = direct BLE to the pump; esphome = ESP32 running ESPHome. ESPHome columns are only used for the esphome transport. Direct BLE pairing: after start, press the blue LED button on the pump; if reconnects fail on Linux, bond once with 'bluetoothctl pair <MAC>'. HCI device index selects the Bluetooth adapter (hci0 = 0); leave 0 unless you have several adapters. See the README for details.": "传输：广告 = 插件 AlphaReader MI401（被动、只读）； gatt = 将 BLE 直接连接至泵； esphome = 运行 ESPHome 的 ESP32。 ESPHome 列仅用于 esphome 传输。直接BLE配对：启动后，按下泵上的蓝色LED按钮；如果在 Linux 上重新连接失败，请使用“bluetoothctlpair <MAC>”绑定一次。 HCI设备索引选择蓝牙适配器（hci0 = 0）；保留 0，除非您有多个适配器。有关详细信息，请参阅自述文件。",
+    "Transport: advertising = plug-on AlphaReader MI401 (passive, read-only); gatt = direct BLE to the pump; esphome = ESP32 running ESPHome. ESPHome columns are only used for the esphome transport. Direct BLE: press the pump's blue LED button for the first connection; pairing is then automatic (may take a few seconds). HCI device index selects the Bluetooth adapter (hci0 = 0); leave 0 unless you have several adapters. See the README for details.": "传输：广告 = 插件 AlphaReader MI401（被动、只读）； gatt = 将 BLE 直接连接至泵； esphome = 运行 ESPHome 的 ESP32。 ESPHome 列仅用于 esphome 传输。直接BLE：第一次连接时按泵的蓝色LED按钮；然后自动配对（可能需要几秒钟）。 HCI设备索引选择蓝牙适配器（hci0 = 0）；保留 0，除非您有多个适配器。有关详细信息，请参阅自述文件。",
     "grundfos adapter settings": "grundfos的适配器设置",
     "option1": "选项1",
     "option2": "选项2"
