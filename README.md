@@ -55,6 +55,23 @@ models and transports that support writing (currently the HWR family over the di
 path). The setpoint unit depends on the mode: meters for pressure modes, rpm for constant
 speed, m³/h for constant flow.
 
+### Configuration
+
+Add one row per pump in the **Devices** table in the adapter settings. The columns:
+
+| Column | Meaning |
+| --- | --- |
+| **Name** | Free label; also becomes the object id (`grundfos.<instance>.<name>`). |
+| **Transport** | How the adapter reaches the pump: `advertising`, `gatt`, or `esphome` (see above). |
+| **Model** | `hwr` (ALPHA HWR / 15 / Comfort), `alpha2go` (ALPHA2 GO), or `alpha3` (ALPHA 3). Determines which telemetry object is polled and whether control is available. |
+| **Address** | BLE MAC address for `advertising` / `gatt` (e.g. `aa:bb:cc:dd:ee:ff`), or the ESP32 host/IP for `esphome`. For `advertising` it may be left empty to accept any AlphaReader in range. |
+| **Poll (ms)** | Telemetry poll interval for the `gatt` transport. |
+| **ESP Port / ESP Password / ESP Encryption Key** | **Only relevant when Transport is `esphome`.** Port defaults to `6053`; set the password or the encryption (Noise) key configured in your ESPHome node. Leave these empty for the `advertising` and `gatt` transports. |
+
+Note: the settings table always shows all columns. It cannot hide the ESP-only columns
+based on the selected transport (per-row conditional visibility is not supported inside a
+table), so just leave the ESP fields empty unless you use the `esphome` transport.
+
 ### Debugging
 
 Set the adapter log level to `debug` to see the full, untruncated protocol traffic (raw
