@@ -12,6 +12,19 @@
             "lg": 12,
             "xl": 12
         },
+        "hciDevice": {
+            "type": "number",
+            "label": "HCI device index (Linux BLE)",
+            "help": "Bluetooth adapter index for the BLE transports (hci0 = 0). Ignored for the ESPHome transport.",
+            "min": 0,
+            "default": 0,
+            "newLine": true,
+            "xs": 12,
+            "sm": 6,
+            "md": 4,
+            "lg": 3,
+            "xl": 3
+        },
         "devices": {
             "type": "table",
             "label": "Devices",
@@ -59,7 +72,7 @@
                     "type": "text",
                     "attr": "address",
                     "width": "22%",
-                    "title": "Address (BLE MAC or ESP host)",
+                    "title": "Address (BLE MAC or ESPHome host)",
                     "default": ""
                 },
                 {
@@ -74,21 +87,21 @@
                     "type": "number",
                     "attr": "esphomePort",
                     "width": "8%",
-                    "title": "ESP Port",
+                    "title": "ESPHome: Port",
                     "default": 6053
                 },
                 {
                     "type": "text",
                     "attr": "esphomePassword",
                     "width": "12%",
-                    "title": "ESP Password",
+                    "title": "ESPHome: Password",
                     "default": ""
                 },
                 {
                     "type": "text",
                     "attr": "esphomeEncryptionKey",
                     "width": "12%",
-                    "title": "ESP Encryption Key",
+                    "title": "ESPHome: Encryption Key",
                     "default": ""
                 }
             ]

@@ -28,6 +28,15 @@ own risk.
   BlueZ) for the two direct BLE paths. The BLE driver (`@stoprocent/noble`) is an
   optional dependency; if it is missing, only the ESPHome path works.
 - Node.js 20 or newer.
+- On Linux, Node needs raw-socket capabilities to access the HCI adapter without root:
+
+  ```bash
+  sudo setcap cap_net_raw+eip $(eval readlink -f $(which node))
+  ```
+
+  Select the Bluetooth adapter with the **HCI device index** setting (hci0 = 0). This is
+  passed to noble via `NOBLE_HCI_DEVICE_ID`. The ESPHome path needs neither BlueZ nor
+  these capabilities.
 
 ### Transports
 

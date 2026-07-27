@@ -1,6 +1,8 @@
 {
     "grundfos adapter settings": "Adapter settings for grundfos",
     "Devices": "Devices",
+    "HCI device index (Linux BLE)": "HCI device index (Linux BLE)",
+    "Bluetooth adapter index for the BLE transports (hci0 = 0). Ignored for the ESPHome transport.": "Bluetooth adapter index for the BLE transports (hci0 = 0). Ignored for the ESPHome transport.",
     "Name": "Name",
     "Transport": "Transport",
     "Model": "Model",

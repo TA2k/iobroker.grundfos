@@ -1,10 +1,12 @@
 {
     "Address (BLE MAC or ESP host)": "Adresse (BLE-MAC oder ESP-Host)",
+    "Bluetooth adapter index for the BLE transports (hci0 = 0). Ignored for the ESPHome transport.": "Bluetooth-Adapterindex für die BLE-Transporte (hci0 = 0). Wird für den ESPHome-Transport ignoriert.",
     "Configure one entry per pump. Choose the transport that matches your setup.": "Ein Eintrag pro Pumpe. Wähle den Transport passend zu deinem Aufbau.",
     "Devices": "Geräte",
     "ESP Encryption Key": "ESP-Verschlüsselungsschlüssel",
     "ESP Password": "ESP-Passwort",
     "ESP Port": "ESP-Port",
+    "HCI device index (Linux BLE)": "HCI-Geräteindex (Linux BLE)",
     "Model": "Modell",
     "Name": "Name",
     "Poll (ms)": "Abfrage (ms)",

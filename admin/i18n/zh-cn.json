@@ -1,10 +1,12 @@
 {
     "Address (BLE MAC or ESP host)": "地址（BLE MAC 或 ESP 主机）",
+    "Bluetooth adapter index for the BLE transports (hci0 = 0). Ignored for the ESPHome transport.": "BLE 传输的蓝牙适配器索引 (hci0 = 0)。 ESPHome 传输被忽略。",
     "Configure one entry per pump. Choose the transport that matches your setup.": "每个泵配置一个条目。选择与您的设置相匹配的传输方式。",
     "Devices": "设备",
     "ESP Encryption Key": "ESP 加密密钥",
     "ESP Password": "ESP密码",
     "ESP Port": "ESP端口",
+    "HCI device index (Linux BLE)": "HCI 设备索引 (Linux BLE)",
     "Model": "模型",
     "Name": "姓名",
     "Poll (ms)": "轮询（毫秒）",

@@ -81,6 +81,7 @@
         ]
     },
     "native": {
+        "hciDevice": 0,
         "devices": []
     },
     "objects": [],

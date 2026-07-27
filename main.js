@@ -99,6 +99,7 @@ class Grundfos extends utils.Adapter {
                     transport: device.transport,
                     model: device.model,
                     address: device.address,
+                    hciDevice: this.config.hciDevice,
                     pollInterval: device.pollInterval,
                     esphomePort: device.esphomePort,
                     esphomePassword: device.esphomePassword,
