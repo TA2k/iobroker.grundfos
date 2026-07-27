@@ -18,7 +18,7 @@
     "url": "https://github.com/TA2k/ioBroker.grundfos.git"
   },
   "engines": {
-    "node": ">= 20"
+    "node": ">= 22"
   },
   "dependencies": {
     "@2colors/esphome-native-api": "^1.3.6",
