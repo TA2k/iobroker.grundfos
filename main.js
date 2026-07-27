@@ -149,6 +149,7 @@ class Grundfos extends utils.Adapter {
         const base = `${id}.control`;
         await this.setObjectNotExistsAsync(base, { type: "channel", common: { name: "Control" }, native: {} });
 
+        /** @type {Record<string, string>} */
         const modeStates = {};
         for (const [name, val] of Object.entries(ControlMode)) {
             modeStates[String(val)] = name;
