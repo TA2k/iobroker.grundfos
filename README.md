@@ -28,6 +28,16 @@ own risk.
   BlueZ) for the two direct BLE paths. The BLE driver (`@stoprocent/noble`) is an
   optional dependency; if it is missing, only the ESPHome path works.
 - Node.js 20 or newer.
+- For the BLE paths on Debian / Ubuntu / Raspberry Pi OS, install the system packages
+  that `@stoprocent/noble` needs to build and run:
+
+  ```bash
+  sudo apt-get install -y build-essential bluetooth bluez libbluetooth-dev libudev-dev libcap2-bin
+  ```
+
+  If you installed the adapter before these packages were present, reinstall it so the
+  optional dependency is rebuilt (`iobroker upgrade grundfos --install`, or use
+  "Rebuild" / reinstall in the ioBroker admin), then restart the adapter.
 - On Linux, Node needs raw-socket capabilities to access the HCI adapter without root:
 
   ```bash
