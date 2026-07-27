@@ -124,6 +124,7 @@ await client.start();
 -->
 
 ### **WORK IN PROGRESS**
+- (copilot) Adapter requires node.js >= 22 now
 
 - (TA2k) initial release
 
