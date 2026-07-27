@@ -78,7 +78,10 @@
             {
                 "admin": ">=7.0.23"
             }
-        ]
+        ],
+        "osDependencies": {
+            "linux": ["bluetooth", "bluez", "libbluetooth-dev", "libudev-dev", "libcap2-bin"]
+        }
     },
     "native": {
         "hciDevice": 0,
