@@ -105,6 +105,16 @@
                     "default": ""
                 }
             ]
+        },
+        "_help": {
+            "type": "staticText",
+            "text": "Transport: advertising = plug-on AlphaReader MI401 (passive, read-only); gatt = direct BLE to the pump; esphome = ESP32 running ESPHome. ESPHome columns are only used for the esphome transport. Direct BLE pairing: after start, press the blue LED button on the pump; if reconnects fail on Linux, bond once with 'bluetoothctl pair <MAC>'. HCI device index selects the Bluetooth adapter (hci0 = 0); leave 0 unless you have several adapters. See the README for details.",
+            "newLine": true,
+            "xs": 12,
+            "sm": 12,
+            "md": 12,
+            "lg": 12,
+            "xl": 12
         }
     }
 }

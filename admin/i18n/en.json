@@ -11,5 +11,6 @@
     "ESP Port": "ESP Port",
     "ESP Password": "ESP Password",
     "ESP Encryption Key": "ESP Encryption Key",
-    "Configure one entry per pump. Choose the transport that matches your setup.": "Configure one entry per pump. Choose the transport that matches your setup."
+    "Configure one entry per pump. Choose the transport that matches your setup.": "Configure one entry per pump. Choose the transport that matches your setup.",
+    "Transport: advertising = plug-on AlphaReader MI401 (passive, read-only); gatt = direct BLE to the pump; esphome = ESP32 running ESPHome. ESPHome columns are only used for the esphome transport. Direct BLE pairing: after start, press the blue LED button on the pump; if reconnects fail on Linux, bond once with 'bluetoothctl pair <MAC>'. HCI device index selects the Bluetooth adapter (hci0 = 0); leave 0 unless you have several adapters. See the README for details.": "Transport: advertising = plug-on AlphaReader MI401 (passive, read-only); gatt = direct BLE to the pump; esphome = ESP32 running ESPHome. ESPHome columns are only used for the esphome transport. Direct BLE pairing: after start, press the blue LED button on the pump; if reconnects fail on Linux, bond once with 'bluetoothctl pair <MAC>'. HCI device index selects the Bluetooth adapter (hci0 = 0); leave 0 unless you have several adapters. See the README for details."
 }

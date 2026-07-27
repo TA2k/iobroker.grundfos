@@ -11,6 +11,7 @@
     "Name": "Nombre",
     "Poll (ms)": "Encuesta (ms)",
     "Transport": "Transporte",
+    "Transport: advertising = plug-on AlphaReader MI401 (passive, read-only); gatt = direct BLE to the pump; esphome = ESP32 running ESPHome. ESPHome columns are only used for the esphome transport. Direct BLE pairing: after start, press the blue LED button on the pump; if reconnects fail on Linux, bond once with 'bluetoothctl pair <MAC>'. HCI device index selects the Bluetooth adapter (hci0 = 0); leave 0 unless you have several adapters. See the README for details.": "Transporte: publicidad = plug-on AlphaReader MI401 (pasivo, sólo lectura); gatt = BLE directo a la bomba; esphome = ESP32 ejecutando ESPHome. Las columnas ESPHome sólo se utilizan para el transporte esphome. Emparejamiento BLE directo: después del inicio, presione el botón LED azul en la bomba; Si las reconexiones fallan en Linux, vincúlese una vez con 'bluetoothctl pair <MAC>'. El índice del dispositivo HCI selecciona el adaptador Bluetooth (hci0 = 0); deje 0 a menos que tenga varios adaptadores. Consulte el archivo LÉAME para obtener más detalles.",
     "grundfos adapter settings": "Ajustes del adaptador para grundfos",
     "option1": "opción1",
     "option2": "opción2"
