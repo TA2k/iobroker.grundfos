@@ -128,7 +128,10 @@ class Grundfos extends utils.Adapter {
             this.log.info(`Device "${id}" disconnected`);
             this._refreshConnectionState();
         });
-        client.on("error", e => this.log.warn(`Device "${id}" error: ${e.message}`));
+        client.on("error", e => {
+            this.log.warn(`Device "${id}" error: ${e.message}`);
+            this._maybeHintPermissions(e);
+        });
 
         if (client.supportsControl) {
             await this._createControlStates(id);
@@ -138,6 +141,7 @@ class Grundfos extends utils.Adapter {
             await client.start();
         } catch (e) {
             this.log.error(`Device "${id}" failed to start: ${e.message}`);
+            this._maybeHintPermissions(e);
         }
     }
 
@@ -145,7 +149,6 @@ class Grundfos extends utils.Adapter {
         const base = `${id}.control`;
         await this.setObjectNotExistsAsync(base, { type: "channel", common: { name: "Control" }, native: {} });
 
-        /** @type {Record<string, string>} */
         const modeStates = {};
         for (const [name, val] of Object.entries(ControlMode)) {
             modeStates[String(val)] = name;
@@ -195,6 +198,27 @@ class Grundfos extends utils.Adapter {
         // disconnect we re-evaluate conservatively.
         const anyConnected = this.clients.length > 0;
         this.setState("info.connection", anyConnected, true);
+    }
+
+    /**
+     * On typical BLE permission errors, log the exact setcap command that grants
+     * Node the raw-socket capability, so the user can fix it without guessing.
+     *
+     * @param {Error} error - the error emitted by a client/transport
+     */
+    _maybeHintPermissions(error) {
+        const msg = (error && error.message) || "";
+        const looksLikePermission =
+            /EPERM|not permitted|access denied|EACCES|LIBUSB_ERROR_ACCESS|hci|Command Disallowed/i.test(msg);
+        if (!looksLikePermission || this._permissionHintShown) {
+            return;
+        }
+        this._permissionHintShown = true;
+        this.log.error(
+            "BLE access was denied. On Linux, grant Node raw-socket capability with:\n" +
+                `    sudo setcap cap_net_raw+eip $(eval readlink -f ${process.execPath})\n` +
+                "then restart the adapter. This is not needed for the ESPHome transport.",
+        );
     }
 
     /**
