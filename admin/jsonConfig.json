@@ -1,0 +1,97 @@
+{
+    "i18n": true,
+    "type": "panel",
+    "items": {
+        "_info": {
+            "type": "staticText",
+            "text": "Configure one entry per pump. Choose the transport that matches your setup.",
+            "newLine": true,
+            "xs": 12,
+            "sm": 12,
+            "md": 12,
+            "lg": 12,
+            "xl": 12
+        },
+        "devices": {
+            "type": "table",
+            "label": "Devices",
+            "newLine": true,
+            "xs": 12,
+            "sm": 12,
+            "md": 12,
+            "lg": 12,
+            "xl": 12,
+            "items": [
+                {
+                    "type": "text",
+                    "attr": "name",
+                    "width": "15%",
+                    "title": "Name",
+                    "filter": false,
+                    "sort": false,
+                    "default": "pump"
+                },
+                {
+                    "type": "select",
+                    "attr": "transport",
+                    "width": "18%",
+                    "title": "Transport",
+                    "options": [
+                        { "value": "advertising", "label": "AlphaReader MI401 (passive)" },
+                        { "value": "gatt", "label": "Direct BLE (GENI)" },
+                        { "value": "esphome", "label": "ESP32 (ESPHome API)" }
+                    ],
+                    "default": "advertising"
+                },
+                {
+                    "type": "select",
+                    "attr": "model",
+                    "width": "15%",
+                    "title": "Model",
+                    "options": [
+                        { "value": "hwr", "label": "ALPHA HWR / 15 / Comfort" },
+                        { "value": "alpha2go", "label": "ALPHA2 GO" },
+                        { "value": "alpha3", "label": "ALPHA 3" }
+                    ],
+                    "default": "hwr"
+                },
+                {
+                    "type": "text",
+                    "attr": "address",
+                    "width": "22%",
+                    "title": "Address (BLE MAC or ESP host)",
+                    "default": ""
+                },
+                {
+                    "type": "number",
+                    "attr": "pollInterval",
+                    "width": "10%",
+                    "title": "Poll (ms)",
+                    "min": 2000,
+                    "default": 30000
+                },
+                {
+                    "type": "number",
+                    "attr": "esphomePort",
+                    "width": "8%",
+                    "title": "ESP Port",
+                    "default": 6053
+                },
+                {
+                    "type": "text",
+                    "attr": "esphomePassword",
+                    "width": "12%",
+                    "title": "ESP Password",
+                    "default": ""
+                },
+                {
+                    "type": "text",
+                    "attr": "esphomeEncryptionKey",
+                    "width": "12%",
+                    "title": "ESP Encryption Key",
+                    "default": ""
+                }
+            ]
+        }
+    }
+}

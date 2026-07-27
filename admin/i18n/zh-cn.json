@@ -1,0 +1,15 @@
+{
+    "Address (BLE MAC or ESP host)": "地址（BLE MAC 或 ESP 主机）",
+    "Configure one entry per pump. Choose the transport that matches your setup.": "每个泵配置一个条目。选择与您的设置相匹配的传输方式。",
+    "Devices": "设备",
+    "ESP Encryption Key": "ESP 加密密钥",
+    "ESP Password": "ESP密码",
+    "ESP Port": "ESP端口",
+    "Model": "模型",
+    "Name": "姓名",
+    "Poll (ms)": "轮询（毫秒）",
+    "Transport": "运输",
+    "grundfos adapter settings": "grundfos的适配器设置",
+    "option1": "选项1",
+    "option2": "选项2"
+}

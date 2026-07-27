@@ -1,0 +1,15 @@
+{
+    "Address (BLE MAC or ESP host)": "Adresse (hôte BLE MAC ou ESP)",
+    "Configure one entry per pump. Choose the transport that matches your setup.": "Configurez une entrée par pompe. Choisissez le transport qui correspond à votre configuration.",
+    "Devices": "Appareils",
+    "ESP Encryption Key": "Clé de cryptage ESP",
+    "ESP Password": "Mot de passe ESP",
+    "ESP Port": "Port ESP",
+    "Model": "Modèle",
+    "Name": "Nom",
+    "Poll (ms)": "Sondage (ms)",
+    "Transport": "Transport",
+    "grundfos adapter settings": "Paramètres d'adaptateur pour grundfos",
+    "option1": "option1",
+    "option2": "option2"
+}

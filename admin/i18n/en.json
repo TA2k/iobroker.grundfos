@@ -1,0 +1,13 @@
+{
+    "grundfos adapter settings": "Adapter settings for grundfos",
+    "Devices": "Devices",
+    "Name": "Name",
+    "Transport": "Transport",
+    "Model": "Model",
+    "Address (BLE MAC or ESP host)": "Address (BLE MAC or ESP host)",
+    "Poll (ms)": "Poll (ms)",
+    "ESP Port": "ESP Port",
+    "ESP Password": "ESP Password",
+    "ESP Encryption Key": "ESP Encryption Key",
+    "Configure one entry per pump. Choose the transport that matches your setup.": "Configure one entry per pump. Choose the transport that matches your setup."
+}
