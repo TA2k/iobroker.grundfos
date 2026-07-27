@@ -32,16 +32,17 @@ own risk.
   that `@stoprocent/noble` needs to build and run:
 
   ```bash
-  sudo apt-get install -y build-essential bluetooth bluez libbluetooth-dev libudev-dev libcap2-bin
+  sudo apt-get install -y build-essential coreutils bluetooth bluez libbluetooth-dev libudev-dev libcap2-bin
   ```
 
   If you installed the adapter before these packages were present, reinstall it so the
   optional dependency is rebuilt (`iobroker upgrade grundfos --install`, or use
   "Rebuild" / reinstall in the ioBroker admin), then restart the adapter.
-- On Linux, Node needs raw-socket capabilities to access the HCI adapter without root:
+- On Linux, Node needs raw-socket capabilities to access the HCI adapter without root
+  (re-run this after any Node.js update):
 
   ```bash
-  sudo setcap cap_net_raw+eip $(eval readlink -f $(which node))
+  sudo setcap cap_net_raw,cap_net_admin+eip $(eval readlink -f $(which node))
   ```
 
   Select the Bluetooth adapter with the **HCI device index** setting (hci0 = 0). This is

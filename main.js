@@ -216,8 +216,8 @@ class Grundfos extends utils.Adapter {
         }
         this._permissionHintShown = true;
         this.log.error(
-            "BLE access was denied. On Linux, grant Node raw-socket capability with:\n" +
-                `    sudo setcap cap_net_raw+eip $(eval readlink -f ${process.execPath})\n` +
+            "BLE access was denied. On Linux, grant Node raw-socket capabilities with:\n" +
+                `    sudo setcap cap_net_raw,cap_net_admin+eip $(eval readlink -f ${process.execPath})\n` +
                 "then restart the adapter. This is not needed for the ESPHome transport.",
         );
     }
