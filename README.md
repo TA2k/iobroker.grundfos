@@ -13,33 +13,48 @@
 
 ## grundfos adapter for ioBroker
 
-Reads and controls Grundfos ALPHA pumps (ALPHA2 GO, ALPHA3, ALPHA HWR / 15 / Comfort)
-over Bluetooth Low Energy using the GENI protocol.
+Reads and controls Grundfos ALPHA pumps over Bluetooth Low Energy using the GENI protocol.  
++ ALPHA2 GO
++ ALPHA3
++ ALPHA HWR / 15 / Comfort
+> [!NOTE]
+Writing / control is only supported at the moment at ALPHA HWR / 15 / Comfort devices with **Direct BLE  (GENI)** (see Transport 2, not ESPHome).
 
 ### Disclaimer
-
+> [!NOTE]
 Grundfos and ALPHA are trademarks of Grundfos Holding A/S. This is an unofficial,
 community-built adapter and is not affiliated with or endorsed by Grundfos. Use at your
 own risk.
 
 ### Requirements
 
-- ioBroker host with a working Bluetooth Low Energy stack (e.g. a Raspberry Pi with
-  BlueZ) for the two direct BLE paths. The BLE driver (`@stoprocent/noble`) is an
-  optional dependency; if it is missing, only the ESPHome path works.
+- ioBroker host
+  
 - Node.js 20 or newer.
-- For the BLE paths on Debian / Ubuntu / Raspberry Pi OS, install the system packages
+
+- if you want to use Direct BLE (GENI):
+  - a working Bluetooth Low Energy stack (e.g. a Raspberry Pi with
+  BlueZ) for the two direct BLE paths.
+
+  - For the BLE paths on Debian / Ubuntu / Raspberry Pi OS, install the system packages
   that `@stoprocent/noble` needs to build and run:
 
   ```bash
   sudo apt-get install -y build-essential coreutils bluetooth bluez libbluetooth-dev libudev-dev libcap2-bin
   ```
 
+  - the node package BLE driver (`@stoprocent/noble`)
+
+  ```bash
+  sudo npm install @stoprocent/noble
+  ```
+  
   If you installed the adapter before these packages were present, reinstall it so the
   optional dependency is rebuilt (`iobroker upgrade grundfos --install`, or use
   "Rebuild" / reinstall in the ioBroker admin), then restart the adapter.
-- On Linux, Node needs raw-socket capabilities to access the HCI adapter without root
-  (re-run this after any Node.js update):
+  
+  - On Linux, Node needs raw-socket capabilities to access the HCI adapter without root
+  (re-run this after any Node.js update):  
 
   ```bash
   sudo setcap cap_net_raw,cap_net_admin+eip $(eval readlink -f $(which node))
@@ -59,19 +74,20 @@ your setup:
    temperature, mode). Activate the reader mode on the pump by long-pressing the right
    button. Most robust option.
 2. **Direct BLE (GENI)** — connects to the pump's GENI service and polls telemetry, and
-   for the HWR family also controls mode/setpoint/start-stop. ALPHA2 GO / ALPHA3 use an
-   **encrypted BLE link**; the bundled `@stoprocent/noble` performs the pairing (Just
-   Works) automatically the first time the pump requests security, so no manual bonding
-   is normally needed.
-
+   for the HWR family also controls mode/setpoint/start-stop.
+   ALPHA2 GO / ALPHA3 use an  **encrypted BLE link**; the bundled `@stoprocent/noble` 
+   performs the pairing (Just Works) automatically the first time the pump requests
+   security, so no manual bonding is normally needed.  
+  
    To connect the first time, press the blue LED button on the pump. Once its LED stops
    blinking and stays lit, the pump is reachable and the first secured read triggers
    pairing (this can take a few seconds). If a host still refuses to pair (rare, usually
    an OS/BlueZ quirk), the ESPHome path avoids BLE pairing entirely.
-3. **ESP32 (ESPHome API)** — an ESP32 running the ESPHome `alpha3` / `alpha_hwr`
+4. **ESP32 (ESPHome API)** — an ESP32 running the ESPHome `alpha3` / `alpha_hwr`
    component does the BLE work and exposes the pump as ESPHome entities; the adapter
    connects to its native API. Set host, port (default 6053), and password or encryption
    key. Most reliable path for direct pump access.
+   No writing / control supported.
 
 ### Control
 
